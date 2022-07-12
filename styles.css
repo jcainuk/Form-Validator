@@ -70,5 +70,5 @@ h2 {
 }
 
 .form-control small {
-  color: ;
+  color: var(--error-color);
 }

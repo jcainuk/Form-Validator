@@ -28,4 +28,10 @@ form.addEventListener('submit', (event) => {
   } else {
     showSuccess(username);
   }
+
+  if (email.value === '') {
+    showError(email, 'Email is required');
+  } else {
+    showSuccess(email);
+  }
 });

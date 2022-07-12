@@ -5,8 +5,13 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+// Show input error message
+const showError = (input, message) => {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control error';
+};
+
 // Event Listeners
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log(username.value);
 });

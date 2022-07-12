@@ -13,11 +13,19 @@ const showError = (input, message) => {
   small.innerText = message;
 };
 
+// Show success outline
+const showSuccess = (input) => {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control success';
+};
+
 // Event Listeners
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   if (username.value === '') {
     showError(username, 'Username is required');
+  } else {
+    showSuccess(username);
   }
 });

@@ -42,7 +42,6 @@ const checkRequired = (inputArr) => {
 };
 
 // Check input length
-
 const checkLength = (input, min, max) => {
   if (input.value.length < min) {
     showError(input, `${getFieldName(input)} must be at least ${min} characters`);
@@ -50,6 +49,13 @@ const checkLength = (input, min, max) => {
     showError(input, `${getFieldName(input)} must be less than ${max} chracters`);
   } else {
     showSuccess(input);
+  }
+};
+
+// Check passwords match
+const checkPasswordsMatch = (input1, input2) => {
+  if (input1.value !== input2.value) {
+    showError(input2, 'Passwords do not match');
   }
 };
 
@@ -64,4 +70,5 @@ form.addEventListener('submit', (event) => {
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   checkEmail(email);
+  checkPasswordsMatch(password, password2);
 });
